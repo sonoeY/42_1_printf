@@ -5,10 +5,11 @@ OBJS = $(SRCS:.c=.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
+all: $(NAME)
+
 $(NAME): $(OBJS) $(LIBFT)
 	cp -f $(LIBFT) $(NAME)
 	ar rcs $(NAME) $(OBJS)
-all: $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
